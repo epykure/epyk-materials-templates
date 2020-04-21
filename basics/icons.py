@@ -1,5 +1,4 @@
 
-
 from epyk_materials.core.Page import Report
 import config
 
@@ -7,14 +6,13 @@ import config
 # Create a basic report object
 rptObj = Report()
 
-rptObj.materials.slider()
+# Create an icon
+rptObj.materials.icon('favorite')
 
-rptObj.materials.sliders.discrete(20)
+# Create a basic icon button
+rptObj.materials.icons.button('favorite')
 
-rptObj.materials.sliders.tracker(20)
-
-
-
-#rptObj.materials.selects.outlined("Test")
+# Create a basic toggle icon button
+rptObj.materials.icons.toggle('favorite')
 
 rptObj.outs.html_file(path=config.OUTPUT_PATHS_LOCALS_HTML, name=config.OUT_FILENAME)
