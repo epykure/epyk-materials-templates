@@ -28,7 +28,7 @@ rptObj.ui.layouts.new_line(5)
 rptObj.materials.inputs.radio(True, group_name="group_1")
 rptObj.materials.inputs.radio(False, group_name="group_1")
 
-rptObj.materials.menu.surface()
+rptObj.materials.menus.surface()
 
 #p = rptObj.materials.sliders.progressbar(40, label='Test')
 
@@ -36,6 +36,7 @@ rptObj.materials.menu.surface()
 # f = rptObj.materials.texts.floating("Hello")
 # f.style.mdc.elevation()
 
+rptObj.materials.switch(False)
 rptObj.ui.button("Click").click([
   # s.js.slider.setValue(i.dom.content),
   # f.js.floating.shake(True)
