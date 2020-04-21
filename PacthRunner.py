@@ -11,7 +11,7 @@ sys.path.append(os.path.join(cur_dir, "..", "epyk-materials"))
 
 
 # To reduce the scope of filters to generate
-filter = 'button'
+filter = 'select'
 
 
 def process_folder(folder, results, main_folder=None):
