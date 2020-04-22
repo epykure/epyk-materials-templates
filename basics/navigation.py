@@ -6,6 +6,10 @@ import config
 # Create a basic report object
 rptObj = Report()
 
+
+rptObj.materials.tabs(["A", "B"])
+
+rptObj.ui.layouts.new_line()
 rptObj.materials.sliders.progressbar(0.6)
 
 rptObj.ui.layouts.new_line()
