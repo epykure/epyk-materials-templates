@@ -6,22 +6,41 @@ import config
 # Create a basic report object
 rptObj = Report()
 
-rptObj.materials.navigation.bar("Test")
+# rptObj.materials.navigation.bar("Test")
 
-rptObj.materials.tabs(["A", "B"])
+tab1 = rptObj.materials.tabs(["A", "B"])
+
+rptObj.materials.navigation.app_bar("Dismissible Drawer")
+rptObj.materials.drawers(['Inbox', 'Outgoing', 'Drafts'])
+
+
+rptObj.materials.navigation.drawer_app("App Content")
 
 rptObj.ui.layouts.new_line()
-rptObj.materials.sliders.progressbar(0.6)
+tab2 = rptObj.materials.tabs(["Tab %s" % i for i in range(10)])
+
+
+rptObj.ui.button("Test").click([
+  rptObj.js.console.log(tab1.dom.getScrollPosition()),
+  rptObj.js.console.log(tab1.dom.getTabListLength()),
+  tab2.dom.setActiveTab(2),
+  tab2.dom.deactivateTabAtIndex(3),
+  tab2.dom.getTabListLength(),
+])
+
+# rptObj.ui.layouts.new_line()
+# rptObj.materials.sliders.progressbar(0.6)
+#
+# rptObj.ui.layouts.new_line()
+# bar = rptObj.materials.sliders.progressbar()
+#
+# rptObj.ui.layouts.new_line()
+# rev = rptObj.materials.sliders.progressbar(0.2)
 
 rptObj.ui.layouts.new_line()
-bar = rptObj.materials.sliders.progressbar()
-
-rptObj.ui.layouts.new_line()
-rev = rptObj.materials.sliders.progressbar(0.2)
-
 rptObj.ui.button("Click").click([
-  bar.dom.setBuffer(0.3),
-  rev.dom.setReverse(True),
+  #bar.dom.setBuffer(0.3),
+  #rev.dom.setReverse(True),
 ])
 
 rptObj.outs.html_file(path=config.OUTPUT_PATHS_LOCALS_HTML, name=config.OUT_FILENAME)
