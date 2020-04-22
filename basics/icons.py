@@ -9,6 +9,15 @@ rptObj = Report()
 # Create an icon
 rptObj.materials.icon('favorite')
 
+r = rptObj.materials.icons.refresh(tooltip="Refresh")
+r.style.css.color = "red"
+r.style.css.cursor = "pointer"
+r.click([
+  rptObj.js.alert("")
+])
+
+rptObj.materials.icons.toggle('favorite')
+
 rptObj.ui.layouts.new_line()
 rptObj.materials.icon('favorite', in_text_field=True)
 
