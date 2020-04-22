@@ -6,6 +6,7 @@ import config
 # Create a basic report object
 rptObj = Report()
 
+rptObj.materials.navigation.bar("Test")
 
 rptObj.materials.tabs(["A", "B"])
 
