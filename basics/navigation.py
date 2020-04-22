@@ -19,8 +19,8 @@ rptObj.ui.layouts.new_line()
 rev = rptObj.materials.sliders.progressbar(0.2)
 
 rptObj.ui.button("Click").click([
-  bar.js.progress.setBuffer(0.3),
-  rev.js.progress.setReverse(True),
+  bar.dom.setBuffer(0.3),
+  rev.dom.setReverse(True),
 ])
 
 rptObj.outs.html_file(path=config.OUTPUT_PATHS_LOCALS_HTML, name=config.OUT_FILENAME)

@@ -7,12 +7,17 @@ import config
 # Create a basic report object
 rptObj = Report()
 
-rptObj.materials.slider()
+s1 = rptObj.materials.slider()
 
-rptObj.materials.sliders.discrete(20)
+s2 = rptObj.materials.sliders.discrete(20)
 
-rptObj.materials.sliders.tracker(20)
+s3 = rptObj.materials.sliders.tracker(20)
 
+
+rptObj.ui.button("Test").click([
+    rptObj.js.console.log(s2.dom.getValue()),
+    rptObj.js.console.log(s3.dom.getMax()),
+])
 
 
 #rptObj.materials.selects.outlined("Test")

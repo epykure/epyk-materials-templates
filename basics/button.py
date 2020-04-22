@@ -10,18 +10,25 @@ rptObj = Report()
 rptObj.materials.button("favorite")
 
 #
+rptObj.ui.layouts.new_line()
+rptObj.materials.button("favorite", label="Favorites")
+
+rptObj.ui.layouts.new_line()
+rptObj.materials.buttons.toggle(False)
+
+rptObj.ui.layouts.new_line()
 rptObj.materials.buttons.toggle(True)
 
 #
-rptObj.materials.button("favorite", label="Favortie")
+#rptObj.materials.buttons.toggle(True)
 
 #
-r1 = rptObj.materials.radio('event', group_name="group_1")
-r2 = rptObj.materials.radio('event 2', group_name="group_1")
-r3 = rptObj.materials.radio('event 3', group_name="group_1")
+#rptObj.materials.button("favorite", label="Favortie")
+
+#
 
 rptObj.ui.button("Click").click([
-  r1[0].js.radio.disabled(True)
+
 ])
 
 #
