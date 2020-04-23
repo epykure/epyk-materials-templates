@@ -6,13 +6,18 @@ import config
 # Create a basic report object
 rptObj = Report()
 
+# Console component
+c = rptObj.ui.rich.console("* This is a log section for all the events in the different buttons *", options={"timestamp": True})
+
 #
 rptObj.materials.fab("favorite")
 rptObj.materials.fab("favorite", mini=True)
 
 #
-rptObj.ui.layouts.new_line()
+rptObj.materials.new_line()
 rptObj.materials.fabs.extended("favorite")
+
+rptObj.materials.new_line()
 rptObj.materials.fabs.extended("favorite", "favorite", mini=True)
 
 
@@ -32,6 +37,9 @@ rptObj.materials.buttons.toggle(False)
 
 rptObj.ui.layouts.new_line()
 rptObj.materials.buttons.toggle(True)
+
+# Move the console to this location
+c.move()
 
 
 rptObj.outs.html_file(path=config.OUTPUT_PATHS_LOCALS_HTML, name=config.OUT_FILENAME)
