@@ -9,7 +9,7 @@ rptObj = Report()
 rptObj.materials.inputs.textarea("", "favorite")
 i = rptObj.materials.inputs.input("", "favorite")
 
-p = rptObj.materials.inputs.password("", "password")
+p = rptObj.materials.inputs.password("", "password", required=True, rules={"minlength": 7})
 p = rptObj.materials.inputs.prefilled("data", "password")
 
 i += rptObj.materials.icon("favorite")
